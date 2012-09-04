@@ -20,7 +20,6 @@
     var time = ConfigurationManager.AppSettings["releaseTime"];
 }
 <h1>Placeholder Image</h1>
-<h2>Syntax (compatible with <a href="http://placehold.it/">placehold.it</a>)</h2>
 <ul>
 <li><a href="@urlBase/150">@urlBase/150<br /><img src="@urlBase/150" /></a></li>
 <li><a href="@urlBase/150x100">@urlBase/150x100<br /><img src="@urlBase/150x100" /></a></li>
@@ -29,4 +28,4 @@
 <li><a href="@urlBase/150x100?text=Hauhau">@urlBase/150x100?text=Hauhau<br /><img src="@urlBase/150x100?text=Hauhau" /></a></li>
 </ul>
 <br/>
-Built from @(sha.Substring(0,10))...
+Built from <a href="https://github.com/atheken/MyPlaceholder/commit/@sha">@(sha.Substring(0,10))...</a>
