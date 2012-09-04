@@ -37,7 +37,7 @@ namespace Placeholder.Controllers
             height = Math.Max(Math.Min(3000, height), 1);
 
             // Color
-            Color color = Color.FromArgb(0xf0, 0xf0, 0xf0);
+            Color color = Color.FromArgb(0xc0, 0xc0, 0xc0);
             Color textColor = Color.FromArgb(0xc0, 0xc0, 0xc0);
             if (Regex.IsMatch(backgroundColor ?? "", "^[0-9a-f]{1,8}$"))
             {
