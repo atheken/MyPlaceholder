@@ -14,6 +14,9 @@
     }
 
     var urlBase = new Uri(uriBuilder.Uri, Request.Url.PathAndQuery).AbsoluteUri.TrimEnd('/');
+    var sha = ConfigurationManager.AppSettings["releaseSha"];
+    var branch = ConfigurationManager.AppSettings["releaseBranch"];
+    var time = ConfigurationManager.AppSettings["releaseTime"];
 }
 <h1>Placeholder Image</h1>
 <h2>Syntax (compatible with <a href="http://placehold.it/">placehold.it</a>)</h2>
@@ -24,3 +27,5 @@
 <li><a href="@urlBase/150x100/fef0f0/0c0c0c">@urlBase/150x100/fef0f0/0c0c0c<br /><img src="@urlBase/150x100/fef0f0/0c0c0c" /></a></li>
 <li><a href="@urlBase/150x100?text=Hauhau">@urlBase/150x100?text=Hauhau<br /><img src="@urlBase/150x100?text=Hauhau" /></a></li>
 </ul>
+<br/>
+Built from "@branch" (@sha) at @time
