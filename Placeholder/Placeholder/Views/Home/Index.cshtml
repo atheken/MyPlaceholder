@@ -15,7 +15,7 @@
     }
 
     var urlBase = new Uri(uriBuilder.Uri, Request.Url.PathAndQuery).AbsoluteUri.TrimEnd('/');
-    var sha = ConfigurationManager.AppSettings["releaseSha"];
+    var sha = ConfigurationManager.AppSettings["appharbor.commit_id"]; //ConfigurationManager.AppSettings["releaseSha"];
     var branch = ConfigurationManager.AppSettings["releaseBranch"];
     var time = ConfigurationManager.AppSettings["releaseTime"];
 }
@@ -29,4 +29,4 @@
 <li><a href="@urlBase/150x100?text=Hauhau">@urlBase/150x100?text=Hauhau<br /><img src="@urlBase/150x100?text=Hauhau" /></a></li>
 </ul>
 <br/>
-Built from "@branch" (@sha) at @time
+Built from @(sha.Substring(0,10))...
