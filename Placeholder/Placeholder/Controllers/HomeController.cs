@@ -66,7 +66,7 @@ namespace Placeholder.Controllers
 					gStr = foregroundColor[1] + "" + foregroundColor[1];
 					bStr = foregroundColor[2] + "" + foregroundColor[2];
 				}
-				else if (backgroundColor.Length == 6)
+				else if (foregroundColor.Length == 6)
 				{
 					rStr = foregroundColor.Substring(0, 2);
 					gStr = foregroundColor.Substring(2, 2);
