@@ -23,7 +23,7 @@ namespace Placeholder.Controllers
             return View();
         }
 
-        [OutputCache(Duration = 60*60, VaryByParam = "*")]
+        //[OutputCache(Duration = 60*60, VaryByParam = "*")]
         public ActionResult Render(Int32 width, Int32? height, String backgroundColor, String foregroundColor, String text)
         {
             var imageData = GetImage(width, height ?? width, backgroundColor, foregroundColor, text);
@@ -39,15 +39,41 @@ namespace Placeholder.Controllers
             // Color
             Color color = Color.FromArgb(204, 204, 204);
             Color textColor = Color.FromArgb(150, 150, 150);
-            if (Regex.IsMatch(backgroundColor ?? "", "^[0-9a-f]{1,8}$"))
+            if (Regex.IsMatch(backgroundColor ?? "", "^[0-9a-f]{3,6}$"))
             {
-                color = Color.FromArgb((Int32)((backgroundColor.Length == 6) ? 0xff000000 : 0x0) |
-                                        Int32.Parse(backgroundColor, NumberStyles.HexNumber));
+				string rStr = "", gStr = "", bStr = "";
+				if (backgroundColor.Length == 3)
+				{
+					rStr = backgroundColor[0]  + "" + backgroundColor[0];
+					gStr = backgroundColor[1] + "" + backgroundColor[1];
+					bStr = backgroundColor[2] + "" + backgroundColor[2];
+				}
+				else if (backgroundColor.Length == 6)
+				{
+					rStr = backgroundColor.Substring(0, 2);
+					gStr = backgroundColor.Substring(2, 2);
+					bStr = backgroundColor.Substring(4, 2);
+				}
+
+				color = Color.FromArgb(Int32.Parse(rStr, NumberStyles.HexNumber), Int32.Parse(gStr, NumberStyles.HexNumber), Int32.Parse(bStr, NumberStyles.HexNumber));
             }
-            if (Regex.IsMatch(foregroundColor ?? "", "^[0-9a-f]{1,8}$"))
+			if (Regex.IsMatch(foregroundColor ?? "", "^[0-9a-f]{3,6}$"))
             {
-                textColor = Color.FromArgb((Int32)((foregroundColor.Length == 6) ? 0xff000000 : 0x0) |
-                                        Int32.Parse(foregroundColor, NumberStyles.HexNumber));
+				string rStr="" ,gStr="", bStr="";
+				if (foregroundColor.Length == 3)
+				{
+					rStr = foregroundColor[0] + "" + foregroundColor[0];
+					gStr = foregroundColor[1] + "" + foregroundColor[1];
+					bStr = foregroundColor[2] + "" + foregroundColor[2];
+				}
+				else if (backgroundColor.Length == 6)
+				{
+					rStr = foregroundColor.Substring(0, 2);
+					gStr = foregroundColor.Substring(2, 2);
+					bStr = foregroundColor.Substring(4, 2);
+				}
+
+				textColor = Color.FromArgb(Int32.Parse(rStr, NumberStyles.HexNumber), Int32.Parse(gStr, NumberStyles.HexNumber), Int32.Parse(bStr, NumberStyles.HexNumber));
             }
 
             // Label
