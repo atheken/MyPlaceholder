@@ -1,0 +1,7 @@
+_MyPlaceholder is an ASP.Net clone of http://placehold.it_
+
+While we love Placehold.it, production systems require an uptime promise that placehold.it does not provide. This clone can be deployed easily to AppHarbor. (If you have an AppHarbor account, you can fork this repo and have your own instance in about a minute). With AppHarbor, you have the option of becoming a paying customer (and that makes a difference!).
+
+While the URL parameters are similar to those on placehold.it, we draw the line at using the "&text=Placeholder+Text" syntax. Instead, this clone will use normal URL semantics, where "?text=Placeholder+Text" -- this is a minor, but important difference.
+
+We're open for pull requests!
