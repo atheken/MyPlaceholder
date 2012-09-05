@@ -1,0 +1,4 @@
+C:\Users\atheken\Documents\GitHub\MyPlaceholder\Placeholder\Placeholder\bin\Placeholder.dll
+C:\Users\atheken\Documents\GitHub\MyPlaceholder\Placeholder\Placeholder\bin\Placeholder.pdb
+C:\Users\atheken\Documents\GitHub\MyPlaceholder\Placeholder\Placeholder\obj\Debug\Placeholder.dll
+C:\Users\atheken\Documents\GitHub\MyPlaceholder\Placeholder\Placeholder\obj\Debug\Placeholder.pdb

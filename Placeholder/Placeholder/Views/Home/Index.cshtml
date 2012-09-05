@@ -15,7 +15,7 @@
     }
 
     var urlBase = new Uri(uriBuilder.Uri, Request.Url.PathAndQuery).AbsoluteUri.TrimEnd('/');
-    var sha = ConfigurationManager.AppSettings["appharbor.commit_id"]; //ConfigurationManager.AppSettings["releaseSha"];
+    var sha = ConfigurationManager.AppSettings["appharbor.commit_id"] ?? "Local Build"; //ConfigurationManager.AppSettings["releaseSha"];
     var branch = ConfigurationManager.AppSettings["releaseBranch"];
     var time = ConfigurationManager.AppSettings["releaseTime"];
 }
