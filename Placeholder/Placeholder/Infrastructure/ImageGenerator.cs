@@ -25,7 +25,7 @@ namespace Placeholder.Infrastructure
 
 		public Byte[] GetImage(int width, int height, String backgroundColor, String foregroundColor, String text)
 		{
-			text = text ?? "";
+			text = text ?? String.Format("{0}x{1}", width, height);
 			// Size
 			width = Math.Max(Math.Min(3000, width), 1);
 			height = Math.Max(Math.Min(3000, height), 1);
