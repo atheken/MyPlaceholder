@@ -77,7 +77,7 @@ namespace Placeholder.Infrastructure
 			byte[] retval = null;
 			using (MemoryStream memStream = new MemoryStream())
 			{
-				using (Font font = new Font("Verdana", Math.Min(height / 3, width / label.Length), FontStyle.Bold, GraphicsUnit.Pixel))
+				using (Font font = new Font("Verdana", Math.Min(height / 3, width / label.Length), FontStyle.Normal, GraphicsUnit.Pixel))
 				using (Pen pen = new Pen(textColor))
 				using (Brush brush = new SolidBrush(textColor))
 				using (Image image = new Bitmap(width, height))
